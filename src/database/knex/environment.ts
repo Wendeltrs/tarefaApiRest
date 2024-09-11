@@ -10,9 +10,6 @@ export const development: Knex.Config = {
     migrations: {
         directory: path.resolve(__dirname, '..', 'migrations')
     },
-    seeds: {
-        directory: path.resolve(__dirname, '..', 'seeds')
-    },
     pool: {
         afterCreate: (connection: any, done: Function) => {
             connection.run('PRAGMA foreign_keys = ON')

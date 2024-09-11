@@ -3,7 +3,7 @@ import { StatusCodes } from "http-status-codes"
 import { ObjectSchema, ValidationError } from "yup"
 
 
-type TValidation = (field: 'params' | 'query' | 'header' | 'body',schema: ObjectSchema<any>) => RequestHandler
+type TValidation = (field: 'params' | 'query' | 'header' | 'body', schema: ObjectSchema<any>) => RequestHandler
 
 export const validation: TValidation = (field, schema) =>  async (req, res, next) => {
     try {
